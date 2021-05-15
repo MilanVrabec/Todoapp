@@ -1,0 +1,164 @@
+html{
+    box-sizing: border-box;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+.group::before,
+.group:after{
+    content: " ";
+    display: table;
+}
+
+.group:after{
+    clear: both;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*---------------------*/
+/* FLEXBOX */
+main{
+    display: flex;
+    flex-flow: wrap row;
+
+    padding: 0 2em;
+}
+
+main > *{
+    flex: 1;
+}
+
+article{
+    order: 1;
+    flex: 1;
+}
+
+aside{
+    order: 2;
+}
+
+/*----------------------*/
+body{
+    color: #f6f6f6;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+    background-color: #1F1F1F;
+    padding: 1em;
+}
+
+header{
+    margin: 0.5em 3em 0em;
+    border-bottom: 2px solid #e7e7e7 ;
+}
+
+article, aside{
+    padding: 1.2em;
+    margin: 5px;
+}
+
+h1{
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+li{
+    font-size: 1.2em;
+    background-color: #292929;
+    padding: 0.7em 1em;
+    border: 1px solid #333333;
+}
+
+
+li:first-child{
+    border-radius: 0.3em 0.3em 0 0;
+}
+
+li:last-child{
+    border-radius: 0 0 0.3em 0.3em;
+}
+
+textarea{
+    color: #1F1F1F;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 0.3em;
+    padding: 1em;
+    min-height: 7em;
+}
+
+.delete textarea{
+    background-color: rgb(211, 211, 211);
+    min-height: 0;
+}
+.edit aside,
+.delete aside{
+    max-width: 50%;
+}
+
+.btn{
+    background-color: #F1502E;
+    padding: 1em .5em;
+
+    border: none;
+    border-radius: .3em;
+}
+
+.btn:hover,
+.btn:focus{
+    background-color: #df583d;
+    transition: .3s all ease-in-out;
+}
+
+.pull-right{
+    float: right;
+}
+
+.controls a{
+    color: #616161;
+    margin-left: 1em;
+}
+
+.edit-link{
+    color: #00bc84 !important;
+}
+
+.back-link{
+    position: relative;
+    top: -53px; left: 90px;
+}
+
+@media (max-width: 800px){
+
+    article{ order: 2;flex: 1 100%;} 
+    aside{ order: 1;}
+
+}
+
+@media (max-width: 960px){
+    
+    .edit aside,
+    .delete aside{
+        max-width: 96%;
+    }
+}
